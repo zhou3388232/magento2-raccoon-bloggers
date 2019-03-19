@@ -103,6 +103,14 @@ class Grid extends \Magento\Backend\Block\Widget\Grid\Extended
 						'index' => 'fullname',
 					]
 				);
+
+                $this->addColumn(
+                    'skus',
+                    [
+                        'header' => __('Skus'),
+                        'index' => 'skus',
+                    ]
+                );
 				
 						
 						$this->addColumn(

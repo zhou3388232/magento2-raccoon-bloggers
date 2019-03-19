@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../Magento/Backend/etc/menu.xsd">
     <menu>
-        <add id="Raccoon_Bloggers::parent" title="Bloggers" module="Raccoon_Bloggers" sortOrder="100" resource="Raccoon_Bloggers::parent"/>
-		<add id="Raccoon_Bloggers::bloggers" title="Bloggers Bloggers" module="Raccoon_Bloggers" sortOrder="20" parent="Raccoon_Bloggers::parent" action="bloggers/bloggers" resource="Raccoon_Bloggers::bloggers"/>
+        <add id="Raccoon_Bloggers::parent" title="Raccoon" module="Raccoon_Bloggers" sortOrder="100" resource="Raccoon_Bloggers::parent"/>
+		<add id="Raccoon_Bloggers::bloggers" title="Bloggers" module="Raccoon_Bloggers" sortOrder="20" parent="Raccoon_Bloggers::parent" action="bloggers/bloggers" resource="Raccoon_Bloggers::bloggers"/>
 
     </menu>
 </config>
