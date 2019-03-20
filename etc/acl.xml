@@ -3,13 +3,10 @@
     <acl>
         <resources>
             <resource id="Magento_Backend::admin">
-                <!--<resource id="Magento_Backend::content">-->
-                <resource id="Raccoon_Bloggers::bloggers" title="Bloggers" sortOrder="100" >
-                    <resource id="Raccoon_Bloggers::new" title="Create" sortOrder="10"/>
-                    <resource id="Raccoon_Bloggers::edit" title="Edit" sortOrder="10"/>
-                    <resource id="Raccoon_Bloggers::index" title="View" sortOrder="10"/>
+                <resource id="Raccoon_Bloggers::parent" title="Bloggers Parent" sortOrder="100">
+                    <resource id="Raccoon_Bloggers::bloggers" title="View" sortOrder="10" />
+                    <resource id="Raccoon_Bloggers::bloggers_edit" title="Create And Edit" translate="title" sortOrder="10" />
                 </resource>
-                <!--</resource>-->
             </resource>
         </resources>
     </acl>
