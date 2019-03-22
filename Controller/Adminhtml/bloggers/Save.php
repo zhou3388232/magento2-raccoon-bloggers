@@ -87,7 +87,11 @@ class Save extends \Magento\Backend\App\Action
 			if(isset($data['image']['delete']) && $data['image']['delete'] == '1')
 				$data['image'] = '';
 
-			
+            if(isset($data['profile_image']['value']))
+                $data['profile_image'] = $data['profile_image']['value'];
+
+            if(isset($data['image']['value']))
+                $data['image'] = $data['image']['value'];
             $model->setData($data);
 
             try {

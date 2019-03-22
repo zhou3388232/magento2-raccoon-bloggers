@@ -21,7 +21,7 @@ class MassStatus extends \Magento\Backend\App\Action
                 $status = (int) $this->getRequest()->getParam('status');
                 foreach ($itemIds as $postId) {
                     $post = $this->_objectManager->get('Raccoon\Bloggers\Model\Bloggers')->load($postId);
-                    $post->setIsActive($status)->save();
+                    $post->setIsEnabled($status)->save();
                 }
                 $this->messageManager->addSuccess(
                     __('A total of %1 record(s) have been updated.', count($itemIds))

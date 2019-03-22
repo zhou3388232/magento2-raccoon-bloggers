@@ -7,9 +7,9 @@ class Status
     /**#@+
      * Status values
      */
-    const STATUS_ENABLED = 1;
+    const STATUS_ENABLED = 0;
 
-    const STATUS_DISABLED = 2;
+    const STATUS_DISABLED = 1;
 
     /**
      * Retrieve option array
