@@ -23,13 +23,10 @@ class Bloggers extends \Magento\Backend\Block\Widget\Container
      *
      * @return \Magento\Catalog\Block\Adminhtml\Product
      */
-    protected function _prepareLayout()
-    {
-
-		
+    protected function _prepareLayout() {
         $addButtonProps = [
             'id' => 'add_new',
-            'label' => __('Add New'),
+            'label' => __('Actions'),
             'class' => 'add',
             'button_class' => '',
             'class_name' => 'Magento\Backend\Block\Widget\Button\SplitButton',
@@ -37,7 +34,6 @@ class Bloggers extends \Magento\Backend\Block\Widget\Container
         ];
         $this->buttonList->add('add_new', $addButtonProps);
 		
-
         $this->setChild(
             'grid',
             $this->getLayout()->createBlock('Raccoon\Bloggers\Block\Adminhtml\Bloggers\Grid', 'raccoon.bloggers.grid')
@@ -50,11 +46,9 @@ class Bloggers extends \Magento\Backend\Block\Widget\Container
      *
      * @return array
      */
-    protected function _getAddButtonOptions()
-    {
-
+    protected function _getAddButtonOptions() {
         $splitButtonOptions[] = [
-            'label' => __('Add New'),
+            'label' => __('New blogger'),
             'onclick' => "setLocation('" . $this->_getCreateUrl() . "')"
         ];
 

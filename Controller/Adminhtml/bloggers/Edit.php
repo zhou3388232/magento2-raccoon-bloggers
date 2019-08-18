@@ -96,10 +96,10 @@ class Edit extends \Magento\Backend\App\Action
         $resultPage->setActiveMenu('Raccoon_Bloggers::bloggers');
         $resultPage->addBreadcrumb(__('Raccoon'), __('Raccoon'));
         $resultPage->addBreadcrumb(
-            $id ? __('Edit Item') : __('New Item'),
-            $id ? __('Edit Item') : __('New Item')
+            $id ? __('Edit Blogger') : __('New Blogger'),
+            $id ? __('Edit Blogger') : __('New Blogger')
         );
-        $resultPage->getConfig()->getTitle()->prepend($id ? __('Edit Item') : __('New Item'));
+        $resultPage->getConfig()->getTitle()->prepend($id ? __('Edit Blogger') : __('New Blogger'));
         //$resultPage->getConfig()->getTitle()->prepend($model->getId() ? $model->getTitle() : __('New Item'));
 
         return $resultPage;

@@ -55,13 +55,12 @@ class Main extends \Magento\Backend\Block\Widget\Form\Generic implements \Magent
 
         $form->setHtmlIdPrefix('page_');
 
-        $fieldset = $form->addFieldset('base_fieldset', ['legend' => __('Item Information')]);
+        $fieldset = $form->addFieldset('base_fieldset', ['legend' => __('Basic Information')]);
 
         if ($model->getId()) {
             $fieldset->addField('id', 'hidden', ['name' => 'id']);
         }
 
-		
         $fieldset->addField(
             'username',
             'text',
@@ -69,7 +68,6 @@ class Main extends \Magento\Backend\Block\Widget\Form\Generic implements \Magent
                 'name' => 'username',
                 'label' => __('Username'),
                 'title' => __('Username'),
-				
                 'disabled' => $isElementDisabled
             ]
         );
@@ -81,11 +79,20 @@ class Main extends \Magento\Backend\Block\Widget\Form\Generic implements \Magent
                 'name' => 'fullname',
                 'label' => __('Fullname'),
                 'title' => __('Fullname'),
-				
                 'disabled' => $isElementDisabled
             ]
         );
-									
+
+        $fieldset->addField(
+            'link',
+            'text',
+            [
+                'name' => 'link',
+                'label' => __('Link'),
+                'title' => __('Link'),
+                'disabled' => $isElementDisabled
+            ]
+        );							
 
         $fieldset->addField(
             'profile_image',
@@ -94,7 +101,6 @@ class Main extends \Magento\Backend\Block\Widget\Form\Generic implements \Magent
                 'name' => 'profile_image',
                 'label' => __('Profile Image'),
                 'title' => __('Profile Image'),
-				
                 'disabled' => $isElementDisabled
             ]
         );
@@ -108,12 +114,9 @@ class Main extends \Magento\Backend\Block\Widget\Form\Generic implements \Magent
                 'name' => 'image',
                 'label' => __('Image'),
                 'title' => __('Image'),
-				
                 'disabled' => $isElementDisabled
             ]
         );
-						
-							
 
 		$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
 		$wysiwygConfig = $objectManager->create('Magento\Cms\Model\Wysiwyg\Config');
@@ -128,12 +131,9 @@ class Main extends \Magento\Backend\Block\Widget\Form\Generic implements \Magent
                 'label' => __('Description'),
                 'title' => __('Description'),
                 'config' => $wysiwygConfig,
-				
                 'disabled' => $isElementDisabled
             ]
         );
-
-
 						
         $fieldset->addField(
             'skus',
@@ -142,12 +142,10 @@ class Main extends \Magento\Backend\Block\Widget\Form\Generic implements \Magent
                 'name' => 'skus',
                 'label' => __('Skus'),
                 'title' => __('Skus'),
-				
                 'disabled' => $isElementDisabled
             ]
         );
-									
-						
+			
         $fieldset->addField(
             'is_enabled',
             'select',
@@ -160,8 +158,6 @@ class Main extends \Magento\Backend\Block\Widget\Form\Generic implements \Magent
                 'disabled' => $isElementDisabled
             ]
         );
-						
-						
 
         if (!$model->getId()) {
             $model->setData('is_active', $isElementDisabled ? '0' : '1');
@@ -180,7 +176,7 @@ class Main extends \Magento\Backend\Block\Widget\Form\Generic implements \Magent
      */
     public function getTabLabel()
     {
-        return __('Item Information');
+        return __('Basic Information');
     }
 
     /**
@@ -190,7 +186,7 @@ class Main extends \Magento\Backend\Block\Widget\Form\Generic implements \Magent
      */
     public function getTabTitle()
     {
-        return __('Item Information');
+        return __('Basic Information');
     }
 
     /**
@@ -215,15 +211,14 @@ class Main extends \Magento\Backend\Block\Widget\Form\Generic implements \Magent
      * @param string $resourceId
      * @return bool
      */
-    protected function _isAllowedAction($resourceId)
-    {
+    protected function _isAllowedAction($resourceId) {
         return $this->_authorization->isAllowed($resourceId);
     }
     
-    public function getTargetOptionArray(){
-    	return array(
-    				'_self' => "Self",
-					'_blank' => "New Page",
-    				);
+    public function getTargetOptionArray() {
+    	return [
+            '_self' => "Self",
+            '_blank' => "New Page",
+        ];
     }
 }

@@ -14,6 +14,6 @@ class Tabs extends \Magento\Backend\Block\Widget\Tabs
         parent::_construct();
         $this->setId('bloggers_tabs');
         $this->setDestElementId('edit_form');
-        $this->setTitle(__('Bloggers Information'));
+        $this->setTitle(__('Blogger Information'));
     }
 }

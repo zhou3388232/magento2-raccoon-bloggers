@@ -38,7 +38,7 @@ class Edit extends \Magento\Backend\Block\Widget\Form\Container
 
         parent::_construct();
 
-        $this->buttonList->update('save', 'label', __('Save Bloggers'));
+        $this->buttonList->update('save', 'label', __('Save Blogger'));
         $this->buttonList->add(
             'saveandcontinue',
             [
@@ -53,7 +53,7 @@ class Edit extends \Magento\Backend\Block\Widget\Form\Container
             -100
         );
 
-        $this->buttonList->update('delete', 'label', __('Delete Bloggers'));
+        $this->buttonList->update('delete', 'label', __('Delete Blogger'));
     }
 
     /**
@@ -64,9 +64,9 @@ class Edit extends \Magento\Backend\Block\Widget\Form\Container
     public function getHeaderText()
     {
         if ($this->_coreRegistry->registry('bloggers')->getId()) {
-            return __("Edit Bloggers '%1'", $this->escapeHtml($this->_coreRegistry->registry('bloggers')->getTitle()));
+            return __("Edit Blogger '%1'", $this->escapeHtml($this->_coreRegistry->registry('bloggers')->getTitle()));
         } else {
-            return __('New Bloggers');
+            return __('New Blogger');
         }
     }
 
